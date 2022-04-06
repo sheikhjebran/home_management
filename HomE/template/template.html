@@ -1,0 +1,146 @@
+{% load static %}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="zxx">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Seog Responsive web template, Bootstrap Web Templates" />
+  <title>Seog Business Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
+  <link
+    href="//fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&display=swap"
+    rel="stylesheet">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{% static 'css/style-starter.css'%}">
+  <style type="text/css">
+    .main-container{
+      width: 100%;
+    }
+    .menu{
+      float: left; width: 10%;
+    }
+    .side-menu{
+      font-size: 24px; font-weight: bolder;
+    }
+    .side-menu > li{
+      margin-top: 35px;
+      padding-top:10%;
+      padding-left: 10%;
+      padding-bottom: 5px;
+      color: beige;
+      height: 80px;
+      cursor:grab;
+    }
+
+    .rent{
+      background-color: #ffbf52;
+    }
+    .rent:hover{
+      background-color: #f7c56f;
+    }
+    .tenent{
+      background-color: #466afa;
+    }
+    .tenent:hover{
+      background-color: #5778fa;
+    }
+    .home{
+      background-color: #ab30fc;
+    }
+    .home:hover{
+      background-color: #b043f7;
+    }
+    .w3l-banner-content{
+      align-items: normal;
+      padding-top: 5%;
+    }
+  </style>
+</head>
+<body>
+
+  
+  {% block headder %}
+
+  {% endblock %}
+  
+      <!-- move top -->
+      <button onclick="topFunction()" id="movetop" title="Go to top">
+        &#10548;
+      </button>
+      <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+          scrollFunction()
+        };
+  
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+          } else {
+            document.getElementById("movetop").style.display = "none";
+          }
+        }
+  
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
+      <!-- /move top -->
+    </footer>
+    <!--//footer-->
+    <!-- Template JavaScript -->
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/theme-change.js'%}"></script>
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+      $(function () {
+        $('.navbar-toggler').click(function () {
+          $('body').toggleClass('noscroll');
+        })
+      });
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+  
+    <!--/MENU-JS-->
+    <script>
+      $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+  
+        if (scroll >= 80) {
+          $("#site-header").addClass("nav-fixed");
+        } else {
+          $("#site-header").removeClass("nav-fixed");
+        }
+      });
+  
+      //Main navigation Active Class Add Remove
+      $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+      });
+      $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+          if ($(window).width() > 991) {
+            $("header").removeClass("active");
+          }
+        });
+      });
+    </script>
+    <!--//MENU-JS-->
+  
+  
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  
+  </body>
+  
+  </html>
