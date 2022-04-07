@@ -1,0 +1,47 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block headder %}
+<label class="theme-switch" for="checkbox">
+    <input type="checkbox" id="checkbox">
+    <div class="mode-container">
+      <i class="gg-sun"></i>
+      <i class="gg-moon"></i>
+    </div>
+  </label>
+
+<div class="main-container">
+    <div class="menu">
+        <ul class="side-menu" >
+            <li class="rent"><a href="rent">Rent</a></li>
+            <li class="tenent"><a href="tenent">Tenent</a></li>
+            <li class="home" ><a href="home_detail">Home</a></li>
+        </ul>
+    </div>
+
+    <div class="w3l-banner-content">
+        
+        <div class="container">
+        <h1>Rent Detail</h1>
+         <table class="table">
+            <tr class="table-headder">
+                <td>Home</td>
+                <td>Floor</td>
+                <td>Rent Month/Year</td>
+                <td>Rent recived date</td>
+                <td>Rent Amount</td>
+            </tr>
+            <tr class="table-data">
+                <td>Home</td>
+                <td>Floor</td>
+                <td>Rent Month/Year</td>
+                <td>Rent recived date</td>
+                <td>Rent Amount</td>
+            </tr>
+         </table>
+        </div>
+      </div>
+</div>
+  
+  
+  
+{% endblock %}

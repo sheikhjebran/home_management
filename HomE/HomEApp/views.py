@@ -29,6 +29,18 @@ def login(request):
 def authenticate(request):
     csrfContext = RequestContext(request)
     if request.POST['email'] == "sheikhjebran@gmail.com" and request.POST['password'] == "admin":
-        return render(request, 'home.html')
+        return render(request, 'rent.html')
     else:
         return render(request, 'login.html', {'message': 'Invalid Email or Password', 'screen': 'LOGIN'})
+
+
+def rent_detail(request):
+    return render(request, 'rent.html')
+
+
+def tenent_detail(request):
+    return render(request, 'tenent.html')
+
+
+def home_detail(request):
+    return render(request, 'home_detail.html')
