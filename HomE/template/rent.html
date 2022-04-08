@@ -24,19 +24,23 @@
         <h1>Rent Detail</h1>
          <table class="table">
             <tr class="table-headder">
-                <td>Home</td>
-                <td>Floor</td>
+                <td>Rent ID</td>
                 <td>Rent Month/Year</td>
-                <td>Rent recived date</td>
+                <td>Rent RecivedDate</td>
+                <td>Rent Home</td>
+                <td>Rent Tenent</td>
                 <td>Rent Amount</td>
             </tr>
+            {% for rent in rent_details %}
             <tr class="table-data">
-                <td>Home</td>
-                <td>Floor</td>
-                <td>Rent Month/Year</td>
-                <td>Rent recived date</td>
-                <td>Rent Amount</td>
+                <td>{{rent.tenent_name}}</td>
+                <td>{{rent.tenent_start_date}}</td>
+                <td>{{rent.tenent_end_date}}</td>
+                <td>{{rent.tenent_home_id}}</td>
+                <td>{{rent.rent_recived_date}}</td>
+                <td>{{rent.rent_amount}}</td>
             </tr>
+            {% endfor %}
          </table>
         </div>
       </div>

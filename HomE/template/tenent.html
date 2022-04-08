@@ -24,19 +24,25 @@
         <h1>Tenent Detail</h1>
          <table class="table">
             <tr class="table-headder">
-                <td>Home</td>
-                <td>Floor</td>
-                <td>Rent Month/Year</td>
-                <td>Rent recived date</td>
-                <td>Rent Amount</td>
+                <td>Tenent Name</td>
+                <td>Tenent StartDate</td>
+                <td>Tenent EndDate</td>
+                <td>Tenent Home</td>
+                <td>Tenent Advance</td>
+                <td>Tenent Note</td>
             </tr>
+
+             {% for tenent in tenent_details %}
             <tr class="table-data">
-                <td>Home</td>
-                <td>Floor</td>
-                <td>Rent Month/Year</td>
-                <td>Rent recived date</td>
-                <td>Rent Amount</td>
+                <td>{{ tenent.tenent_name}}</td>
+                <td>{{tenent.tenent_start_date}}</td>
+                <td>{{tenent.tenent_end_date}}</td>
+                <td>{{tenent.tenent_home_id}}</td>
+                <td>{{tenent.tenent_advance}}</td>
+                <td>{{tenent.tenent_note}}</td>
             </tr>
+            {% endfor %}
+
          </table>
         </div>
       </div>
