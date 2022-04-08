@@ -31,15 +31,16 @@
       <!-- /login-headder END-->
 
       <div class="form-inner-cont">
-
-        {% if message != 'LOGIN' %}
-        <center><h1>{{message}}</h1></center>
-        {% endif %}
+        {% for message in messages %}
+        <center><h1 class="warning">
+          {{message}}
+        </h1></center>
+        {% endfor %}
         
         <form action="authenticate" method="post" class="signin-form">{% csrf_token %}
           <div class="form-grids">
             <div class="form-input" data-aos="fade-up">
-              <input type="email" name="email" placeholder="Enter your email *" required />
+              <input type="text" name="email" placeholder="Enter your Username *" required />
             </div>
             <div class="form-input" data-aos="fade-up">
               <input type="password" name="password" placeholder="Enter your Password *" required />
