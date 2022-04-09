@@ -18,63 +18,7 @@ Author URL: http://w3layouts.com
     rel="stylesheet">
   <!-- Template CSS -->
   <link rel="stylesheet" href="{% static 'css/style-starter.css'%}">
-  <style type="text/css">
-    .main-container{
-      width: 100%;
-    }
-    .menu{
-      float: left; width: 10%;
-    }
-    .side-menu{
-      font-size: 24px; font-weight: bolder;
-    }
-    .side-menu > li{
-      margin-top: 35px;
-      padding-top:10%;
-      padding-left: 10%;
-      padding-bottom: 5px;
-      color: beige;
-      height: 80px;
-      cursor:grab;
-    }
 
-    .rent{
-      background-color: #ffbf52;
-    }
-    .rent:hover{
-      background-color: #f7c56f;
-    }
-    .tenent{
-      background-color: #466afa;
-    }
-    .tenent:hover{
-      background-color: #5778fa;
-    }
-    .home{
-      background-color: #ab30fc;
-    }
-    .home:hover{
-      background-color: #b043f7;
-    }
-    .w3l-banner-content{
-      align-items: normal;
-      padding-top: 5%;
-    }
-    
-    ul > .rent > a{
-      color: white;
-    }
-
-    ul > .tenent > a{
-      color: white;
-    }
-    ul > .home > a{
-      color: white;
-    }
-    .warning{
-      color: red;
-    }
-  </style>
 </head>
 <body>
   
@@ -111,7 +55,7 @@ Author URL: http://w3layouts.com
     </footer>
     <!--//footer-->
     <!-- Template JavaScript -->
-    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
     <script src="{% static 'js/theme-change.js'%}"></script>
     <!-- disable body scroll which navbar is in active -->
     <script>
@@ -134,7 +78,27 @@ Author URL: http://w3layouts.com
           $("#site-header").removeClass("nav-fixed");
         }
       });
-  
+
+      $(document).ready(function(){
+
+          $('#search').on('input',function(){
+            var search = $('#search').val();
+            if (search.length>3){
+              $.get(
+                      "search",
+                      {search:search},
+                      function(data, status){
+                               alert("Data: " + data + "\nStatus: " + status);
+                       });
+                }
+              });
+      });
+
+
+
+
+
+
       //Main navigation Active Class Add Remove
       $(".navbar-toggler").on("click", function () {
         $("header").toggleClass("active");

@@ -1,0 +1,118 @@
+
+<style type="text/css">
+    .main-container{
+      width: 100%;
+    }
+    .menu{
+      float: left; width: 10%;
+    }
+    .side-menu{
+      font-size: 24px; font-weight: bolder;
+    }
+    .side-menu > li{
+      margin-top: 35px;
+      padding-top:10%;
+      padding-left: 10%;
+      padding-bottom: 5px;
+      color: beige;
+      height: 80px;
+      cursor:grab;
+    }
+
+    .rent{
+      background-color: #ffbf52;
+    }
+    .rent:hover{
+      background-color: #f7c56f;
+    }
+    .tenent{
+      background-color: #466afa;
+    }
+    .tenent:hover{
+      background-color: #5778fa;
+    }
+    .home{
+      background-color: #ab30fc;
+    }
+    .home:hover{
+      background-color: #b043f7;
+    }
+    .w3l-banner-content{
+      align-items: normal;
+      padding-top: 5%;
+    }
+
+    ul > .rent > a{
+      color: white;
+    }
+
+    ul > .tenent > a{
+      color: white;
+    }
+    ul > .home > a{
+      color: white;
+    }
+    .warning{
+      color: red;
+    }
+
+    .color-theme{
+        width: 50%;
+    }
+    .Search_bar{
+        float: right;
+        width: 45%;
+    }
+
+    #logout{
+    border: 0px solid;
+    font-weight:bolder;
+    background-color: #fcb53a;
+    color: white;
+    height:45px;
+    width:100px;
+    float:right;
+    margin-right:5%
+    }
+
+    #search{
+       height:45px;
+        border:0px solid;
+        margin-right:5px
+        padding-right:10px;
+        padding-left:10px;
+        width:70%;
+    }
+    @media screen and (max-width: 300px) {
+    #logout {
+        display: none;
+        }
+    }
+  </style>
+
+</script>
+<div style="width: 100%;">
+    <div class="color-theme">
+            <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox">
+                <div class="mode-container">
+                  <i class="gg-sun"></i>
+                  <i class="gg-moon"></i>
+                </div>
+            </label>
+        </div>
+    <div class="Search_bar">
+        <input type="search" id="search" placeholder="Enter your search iteam">
+        <button type="button" id="logout" text="LOGOUT" onclick="location.href = 'logout';">LOGOUT</button>
+    </div>
+</div>
+
+
+<div class="main-container">
+    <div class="menu">
+        <ul class="side-menu" >
+            <li class="rent"><a href="rent">Rent</a></li>
+            <li class="tenent"><a href="tenent">Tenent</a></li>
+            <li class="home" ><a href="home_detail">Home</a></li>
+        </ul>
+    </div>

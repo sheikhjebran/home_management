@@ -13,4 +13,6 @@ urlpatterns = [
     path('rent', views.rent_detail, name="rent_detail"),
     path('tenent', views.tenent_detail, name="tenent_detail"),
     path('home_detail', views.home_detail, name="home_detail"),
+    path('search', views.search, name="search"),
+    path('logout', views.logout, name="logout"),
 ]

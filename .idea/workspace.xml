@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d3d91a2-e5ec-46fc-a5cb-9397752d121f" name="Changes" comment="" />
+    <list default="true" id="6d3d91a2-e5ec-46fc-a5cb-9397752d121f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/HomE/static/js/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomE/template/dashboard_headder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/HomE/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/HomE/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/HomEApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/HomEApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/HomEApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/HomEApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/HomEApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/HomEApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/HomEApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/template/home_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/template/home_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/template/rent.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/template/rent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/template/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/template/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomE/template/tenent.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/template/tenent.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,11 +49,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="exceleditor.install" value="true" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/HomE/static/js" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

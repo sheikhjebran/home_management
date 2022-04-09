@@ -1,22 +1,7 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block headder %}
-<label class="theme-switch" for="checkbox">
-    <input type="checkbox" id="checkbox">
-    <div class="mode-container">
-      <i class="gg-sun"></i>
-      <i class="gg-moon"></i>
-    </div>
-  </label>
-
-<div class="main-container">
-    <div class="menu">
-        <ul class="side-menu" >
-            <li class="rent"><a href="rent">Rent</a></li>
-            <li class="tenent"><a href="tenent">Tenent</a></li>
-            <li class="home" ><a href="home_detail">Home</a></li>
-        </ul>
-    </div>
+{%include "dashboard_headder.html" %}
 
     <div class="w3l-banner-content">
         
@@ -33,11 +18,11 @@
             </tr>
             {% for rent in rent_details %}
             <tr class="table-data">
-                <td>{{rent.tenent_name}}</td>
-                <td>{{rent.tenent_start_date}}</td>
-                <td>{{rent.tenent_end_date}}</td>
-                <td>{{rent.tenent_home_id}}</td>
+                <td>{{rent.id}}</td>
+                <td>{{rent.rent_month_year}}</td>
                 <td>{{rent.rent_recived_date}}</td>
+                <td>{{rent.rent_tenent_id.tenent_home_id.home_name}}</td>
+                <td>{{rent.rent_tenent_id.tenent_name}}</td>
                 <td>{{rent.rent_amount}}</td>
             </tr>
             {% endfor %}
