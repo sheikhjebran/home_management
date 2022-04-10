@@ -1,12 +1,15 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block headder %}
-{%include "dashboard_headder.html" %}
+
 
     <div class="w3l-banner-content">
         
         <div class="container">
         <h1>Rent Detail</h1>
+        <div>
+            <input type="button" class="button" value="Add Rent" onclick="location.href = '/add_rent_detail';">
+        </div>
          <table class="table">
             <tr class="table-headder">
                 <td>Rent ID</td>
@@ -18,8 +21,8 @@
             </tr>
             {% for rent in rent_details %}
             <tr class="table-data">
-                <td>{{rent.id}}</td>
-                <td>{{rent.rent_month_year}}</td>
+                <td><a href="rent_detail_modify/{{rent.id}}">{{ rent.id}}</a></td>
+                <td>{{rent.rent_month_year|date:'M-Y'}}</td>
                 <td>{{rent.rent_recived_date}}</td>
                 <td>{{rent.rent_tenent_id.tenent_home_id.home_name}}</td>
                 <td>{{rent.rent_tenent_id.tenent_name}}</td>

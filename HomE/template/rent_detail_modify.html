@@ -1,0 +1,58 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block headder %}
+
+    <div class="w3l-banner-content">
+        <div class="container">
+        <h1>Rent Detail</h1>
+         <form method="POST" action="/update_rent_detail">{% csrf_token %}
+             <table>
+                 <tr>
+                     <td>Rent Tenent </td>
+                     <td>
+                         : <select name ="rent_tenent_id">
+                             {% if rent_detail == "NEW" %}
+                                {%for iteam in tenent_object %}
+                                    <option value="{{iteam.id}}">{{ iteam.tenent_name}}</option>
+                                {%endfor%}
+                            {% else %}
+                                    <option value="{{rent_detail.id}}">{{ rent_detail.rent_tenent_id.tenent_name}}</option>
+                             {% endif %}
+                         </select>
+                     </td>
+                 </tr>
+
+
+                 <tr>
+                     <td>Rent Month/Year</td>
+                     <td>: <Input type="date" name ="rent_month_year" value="{{rent_detail.rent_month_year|date:'Y-m-d'}}">
+                     </td>
+                 </tr>
+
+                 <tr>
+                     <td>Rent RecivedDate</td>
+                     <td>: <Input type="date" name ="rent_recived_date" value="{{rent_detail.rent_recived_date|date:'Y-m-d'}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td>Rent Amount</td>
+                     <td>: <Input type="text" name ="rent_amount" value="{{rent_detail.rent_amount}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td><input type="submit" value="Update"></td>
+                     <td>
+                        <button type="button" id="Delete" text="Delete" class= "delete_button" onclick="location.href = '/Delete_rent_detail/{{rent_detail.id}}';">Delete</button>
+                     </td>
+                 </tr>
+                <input type="text" hidden="true" name="rent_id" value ="{{rent_detail.id}}">
+
+             </table>
+         </form>
+        </div>
+      </div>
+</div>
+
+
+
+{% endblock %}

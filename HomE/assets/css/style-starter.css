@@ -19083,8 +19083,10 @@ float: left;
 width: 20%;
 }
 
-.side-menu{
+ul li > .rent{
 font-size: 18px;
 font-weight: bolder;
-background-color: #cabcec;
 }
+
+.warning{
+color:red}

@@ -1,58 +1,33 @@
-{% extends 'template.html' %}
+{% extends 'base.html' %}
 {% load static %}
-{% block headder %}
+{% block content %}
 
-  <div class="w3l-banner-content">
+<div class="w3l-banner-content">
     <div class="container">
-     <!-- /login-section -->
-     <!-- /login-headder -->
-     <div class="header-title text-center mx-auto">
-      <h6 class="title-subhny mb-2">Login
-      </h6>
-      
-      
-      <h3 class="title-w3l">Authenticate to use Dashboard
-        <!-- toggle switch for light and dark theme -->
-        
-            
-              <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox">
-                <div class="mode-container">
-                  <i class="gg-sun"></i>
-                  <i class="gg-moon"></i>
-                </div>
-              </label>
-            
-        <!-- //toggle switch for light and dark theme -->
-      </h3>
-      <p class="mb-5">We have made it easy for clients to reach us and get their solutions weaved</p>
-      
-    </div>
-      <!-- /login-headder END-->
+         <div class="form-inner-cont">
+                <center><h1>Login</h1></center>
+                {% for message in messages %}
+                <center><h5 class="warning">
+                  {{message}}
+                </h5></center>
+                {% endfor %}
 
-      <div class="form-inner-cont">
-        {% for message in messages %}
-        <center><h1 class="warning">
-          {{message}}
-        </h1></center>
-        {% endfor %}
-        
-        <form action="authenticate" method="post" class="signin-form">{% csrf_token %}
-          <div class="form-grids">
-            <div class="form-input" data-aos="fade-up">
-              <input type="text" name="email" placeholder="Enter your Username *" required />
-            </div>
-            <div class="form-input" data-aos="fade-up">
-              <input type="password" name="password" placeholder="Enter your Password *" required />
-            </div>
-          </div>
-          
-          <div class="text-center mt-3">
-            <button class="btn btn-style btn-primary">Login</button>
-          </div>
-        </form>
-      </div>
+                <form action="authenticate" method="post" class="signin-form">{% csrf_token %}
+                  <div class="form-grids">
+                    <div class="form-input" data-aos="fade-up">
+                      <input type="text" name="email" placeholder="Enter your Username *" required />
+                    </div>
+                    <div class="form-input" data-aos="fade-up">
+                      <input type="password" name="password" placeholder="Enter your Password *" required />
+                    </div>
+                  </div>
+
+                  <div class="text-center mt-3">
+                    <button class="btn btn-style btn-primary">Login</button>
+                  </div>
+                </form>
+         </div>
     </div>
-  </div>
-  
+</div>
+
 {% endblock %}

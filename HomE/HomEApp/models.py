@@ -18,8 +18,8 @@ class Home(models.Model):
 
 class Tenent(models.Model):
     tenent_name = CharField(max_length=200)
-    tenent_start_date = DateTimeField()
-    tenent_end_date = DateTimeField()
+    tenent_start_date = DateField()
+    tenent_end_date = DateField()
     tenent_home_id = ForeignKey(Home, on_delete=models.CASCADE)
     tenent_advance = IntegerField()
     tenent_note = TextField(max_length=500)
@@ -29,10 +29,13 @@ class Tenent(models.Model):
 
 
 class Rent(models.Model):
+
     rent_tenent_id = ForeignKey(Tenent, on_delete=models.CASCADE)
     rent_month_year = DateField()
-    rent_recived_date = DateTimeField()
+    rent_recived_date = DateField()
     rent_amount = IntegerField()
 
     def __str__(self):
         return '%s %s' % (self.rent_tenent_id, self.rent_month_year)
+
+

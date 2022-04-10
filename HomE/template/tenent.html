@@ -1,11 +1,13 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block headder %}
-{% include 'dashboard_headder.html' %}
 
     <div class="w3l-banner-content">
         <div class="container">
         <h1>Tenent Detail</h1>
+        <div>
+            <input type="button" class="button" value="Add Tenent" onclick="location.href = 'add_tenent_detail';">
+        </div>
          <table class="table">
             <tr class="table-headder">
                 <td>Tenent Name</td>
@@ -18,7 +20,7 @@
 
              {% for tenent in tenent_details %}
             <tr class="table-data">
-                <td>{{tenent.tenent_name}}</td>
+                <td><a href="tenent_detail_modify/{{tenent.id}}">{{ tenent.tenent_name}}</a></td>
                 <td>{{tenent.tenent_start_date}}</td>
                 <td>{{tenent.tenent_end_date}}</td>
                 <td>{{tenent.tenent_home_id.home_name}}</td>

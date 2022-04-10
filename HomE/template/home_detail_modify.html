@@ -1,0 +1,56 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block headder %}
+
+    <div class="w3l-banner-content">
+        <div class="container">
+        <h1>Home Detail</h1>
+         <form method="POST" action="/update_home_detail">{% csrf_token %}
+             <table>
+                 <tr>
+                     <td>Home Name </td>
+                     <td>: <Input type="text" name ="home_name" value="{{home_detail.home_name}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td>Home Location</td>
+                     <td>: <Input type="text" name ="home_location" value="{{home_detail.home_location}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td>Home Rent</td>
+                     <td>: <Input type="text" name ="home_rent" value="{{home_detail.home_rent}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td>Home Floor</td>
+                     <td>: <Input type="text" name ="home_floor" value="{{home_detail.home_floor}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td>Home Paint Amount</td>
+                     <td>: <Input type="text" name ="home_painting_money" value="{{home_detail.home_painting_money}}"></td>
+                 </tr>
+
+                  <tr>
+                     <td>Home Address</td>
+                     <td>: <textarea name ="home_address" >{{home_detail.home_address}}</textarea></td>
+                 </tr>
+
+                 <tr>
+                     <td><input type="submit" value="Update"></td>
+                     <td>
+                        <button type="button" id="Delete" text="Delete" class= "delete_button" onclick="location.href = '/Delete_home_detail/{{home_detail.id}}';">Delete</button>
+                     </td>
+                 </tr>
+                <input type="text" hidden="true" name="home_id" value ={{home_detail.id}}>
+
+             </table>
+         </form>
+        </div>
+      </div>
+</div>
+
+
+
+{% endblock %}

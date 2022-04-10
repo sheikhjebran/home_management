@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'HomE.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'home_management',
@@ -103,7 +103,7 @@ DATABASES = {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
     }
-}
+}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

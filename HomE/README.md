@@ -13,7 +13,7 @@ python3 manage.py sqlmigrate HomEApp 0001
 ```
 
 
-
+<!--{%include "dashboard_headder.html" %}-->
 # for static files
 ```
 python manage.py collectstatic

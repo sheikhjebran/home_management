@@ -1,0 +1,69 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block headder %}
+
+    <div class="w3l-banner-content">
+        <div class="container">
+        <h1>Tenent Detail</h1>
+         <form method="POST" action="/update_tenent_detail">{% csrf_token %}
+             <table>
+                 <tr>
+                     <td>Tenent Name </td>
+                     <td>: <Input type="text" name ="tenent_name" value="{{tenent_detail.tenent_name}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td>Tenent StartDate</td>
+                     <td>: <Input type="date" name ="tenent_start_date" value="{{tenent_detail.tenent_start_date|date:'Y-m-d'}}">
+                     </td>
+                 </tr>
+
+                 <tr>
+                     <td>Tenent EndDate</td>
+                     <td>: <Input type="date" name ="tenent_end_date" value="{{tenent_detail.tenent_end_date|date:'Y-m-d'}}"></td>
+                 </tr>
+
+                 <tr>
+                     <td>Tenent Home</td>
+                     <td>:
+
+                         <select name ="tenent_home_id">
+                             {% if tenent_detail == "NEW" %}
+                                {%for iteam in home_object %}
+                                    <option value="{{iteam.id}}">{{ iteam.home_name}} - {{iteam.home_location}} - {{iteam.home_floor }} Floor</option>
+                                {%endfor%}
+                            {% else %}
+                                    <option value="{{tenent_detail.tenent_home_id.id}}">{{tenent_detail.tenent_home_id}}</option>
+                             {% endif %}
+                         </select>
+
+                     </td>
+                 </tr>
+
+                 <tr>
+                     <td>Tenent Advance</td>
+                     <td>: <Input type="text" name ="tenent_advance" value="{{tenent_detail.tenent_advance}}"></td>
+                 </tr>
+
+                  <tr>
+                     <td>Tenent Note</td>
+                     <td>: <textarea name ="tenent_note" >{{tenent_detail.tenent_note}}</textarea></td>
+                 </tr>
+
+                 <tr>
+                     <td><input type="submit" value="Update"></td>
+                     <td>
+                        <button type="button" id="Delete" text="Delete" class= "delete_button" onclick="location.href = '/Delete_tenent_detail/{{tenent_detail.id}}';">Delete</button>
+                     </td>
+                 </tr>
+                <input type="text" hidden="true" name="tenent_id" value ="{{tenent_detail.id}}">
+
+             </table>
+         </form>
+        </div>
+      </div>
+</div>
+
+
+
+{% endblock %}

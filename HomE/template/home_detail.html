@@ -1,11 +1,13 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block headder %}
-{% include 'dashboard_headder.html' %}
 
     <div class="w3l-banner-content">
         <div class="container">
         <h1>Home Detail</h1>
+        <div>
+            <input type="button" class="button" value="Add Home" onclick="location.href = 'add_home_detail';">
+        </div>
          <table class="table">
             <tr class="table-headder">
                 <td>Home</td>
@@ -18,11 +20,11 @@
 
              {% for home in home_details %}
             <tr class="table-data">
-                <td>{{ home.home_name}}</td>
+                <td><a href="home_detail_modify/{{home.id}}">{{ home.home_name}}</a></td>
                 <td>{{home.home_location}}</td>
                 <td>{{home.home_address}}</td>
                 <td>{{home.home_floor}}</td>
-                <td>{{home.home_paint_money}}</td>
+                <td>{{home.home_painting_money}}</td>
                 <td>{{home.home_rent}}</td>
             </tr>
             {% endfor %}
