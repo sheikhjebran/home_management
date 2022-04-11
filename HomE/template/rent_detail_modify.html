@@ -21,7 +21,22 @@
                          </select>
                      </td>
                  </tr>
+                <tr>
+                     <td>Rent Home</td>
+                     <td>:
+                         {% if rent_detail == "NEW" %}
+                                <select name ="rent_tenent_home">
+                                {%for iteam in tenent_object %}
+                                    <option value="{{iteam.tenent_home_id.id}}">{{ iteam.tenent_home_id.home_name}}</option>
+                                {%endfor%}
+                                </select>
+                         {% else %}
+                                    <Input type="text" name ="rent_tenent_home" value="{{rent_detail.rent_tenent_id.tenent_home_id.home_name}}">
+                         {% endif %}
 
+
+                     </td>
+                 </tr>
 
                  <tr>
                      <td>Rent Month/Year</td>
