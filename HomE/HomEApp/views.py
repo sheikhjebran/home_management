@@ -46,7 +46,7 @@ def search(request):
 @csrf_protect
 def rent_detail(request):
     if request.user.is_authenticated:
-        rent_details = Rent.objects.all()
+        rent_details = Rent.objects.all().order_by('-id')
         return render(request, 'rent.html', {'rent_details': rent_details})
     else:
         return render(request, 'login.html')

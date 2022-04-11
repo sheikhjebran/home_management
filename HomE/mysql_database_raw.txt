@@ -1,0 +1,29 @@
+id bigint primary key AUTO_INCREMENT,
+home_address varchar(255),
+home_floor varchar(20),
+home_location varchar(255),
+home_name varchar(100),
+home_painting_money int,
+home_rent int
+);
+
+
+create table HomEApp_tenent(
+id bigint primary key AUTO_INCREMENT,
+tenent_name varchar(200),
+tenent_start_date date,
+tenent_end_date date,
+tenent_advance int,
+tenent_note longtext,
+tenent_home_id_id bigint, foreign key(tenent_home_id_id) references HomEApp_home(id)
+);
+
+
+create table HomEApp_rent(
+id bigint primary key AUTO_INCREMENT,
+rent_recived_date date,
+rent_amount int,
+rent_tenent_id_id bigint,
+rent_month_year date,
+foreign key(rent_tenent_id_id) references HomEApp_tenent(id)
+);
