@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from django.db.models import CharField, IntegerField, DateTimeField, ForeignKey, TextField, DateField
+from django.db.models import CharField, IntegerField, FileField, ForeignKey, TextField, DateField
 
 
 class Home(models.Model):
@@ -39,3 +39,10 @@ class Rent(models.Model):
         return '%s %s' % (self.rent_tenent_id, self.rent_month_year)
 
 
+class Document(models.Model):
+    document_type = TextField(max_length=30)
+    document_tenant = ForeignKey(Tenent, on_delete=models.CASCADE)
+    document_upload = FileField(upload_to='media')
+
+    def __str__(self):
+        return f"{self.document_tenant.tenent_name}"
