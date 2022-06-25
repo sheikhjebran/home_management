@@ -38,7 +38,11 @@ class Rent(models.Model):
     def __str__(self):
         return '%s %s' % (self.rent_tenent_id, self.rent_month_year)
 
+class Document():
+    document_tenent = ForeignKey(Tenent, on_delete=models.CASCADE)
+    document_file = FileField(upload_to='documents/%Y/%m/%d')
 
+<<<<<<< Updated upstream
 class Document(models.Model):
     document_type = TextField(max_length=30)
     document_tenant = ForeignKey(Tenent, on_delete=models.CASCADE)
@@ -46,3 +50,7 @@ class Document(models.Model):
 
     def __str__(self):
         return f"{self.document_tenant.tenent_name}"
+=======
+    def __str__(self):
+        return f"{self.document_tenent}"
+>>>>>>> Stashed changes
