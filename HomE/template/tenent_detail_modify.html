@@ -30,7 +30,7 @@
                          <select name ="tenent_home_id">
                              {% if tenent_detail == "NEW" %}
                                 {%for iteam in home_object %}
-                                    <option value="{{iteam.id}}">{{ iteam.home_name}} - {{iteam.home_location}} - {{iteam.home_floor }} Floor</option>
+                                    <option value="{{iteam.id}}" selected="selected">{{ iteam.home_name}} - {{iteam.home_location}} - {{iteam.home_floor }} Floor</option>
                                 {%endfor%}
                             {% else %}
                                     <option value="{{tenent_detail.tenent_home_id.id}}">{{tenent_detail.tenent_home_id}}</option>
