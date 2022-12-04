@@ -20,7 +20,7 @@
                                     </option>
                                 {%endfor%}
                             {% else %}
-                                    <option value="{{rent_detail.id}}">
+                                    <option value="{{rent_detail.rent_tenent_id.id}}">
                                         {{ rent_detail.rent_tenent_id.tenent_name}}
                                         {{ rent_detail.rent_tenent_id.tenent_home_id.home_location}}
                                         {{ rent_detail.rent_tenent_id.tenent_home_id.home_floor}}
