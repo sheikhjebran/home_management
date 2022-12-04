@@ -20,3 +20,5 @@ urlpatterns = [
     path('', include('HomEApp.urls')),
     path('admin/', admin.site.urls),
 ]
+
+    

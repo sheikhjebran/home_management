@@ -123,7 +123,18 @@ def add_tenent_detail(request):
 
 
 def add_rent_detail(request):
-    tenent_detail_obj = Tenent.objects.all()
+    tenent_detail_obj = Tenent.objects.all().select_related('tenent_home_id')    
+
+    tenent_list = []
+    for tenent in tenent_detail_obj:
+        tenent_single_entry_list = [
+        tenent.id,
+        tenent.tenent_name,
+        tenent.tenent_home_id.home_location,
+        tenent.tenent_home_id.home_floor]
+
+        tenent_list.append(tenent_single_entry_list)
+
     return render(request, 'rent_detail_modify.html', {'rent_detail': 'NEW', 'tenent_object': tenent_detail_obj})
 
 

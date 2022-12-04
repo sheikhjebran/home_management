@@ -13,31 +13,22 @@
                          : <select name ="rent_tenent_id">
                              {% if rent_detail == "NEW" %}
                                 {%for iteam in tenent_object %}
-                                    <option value="{{iteam.id}}">{{ iteam.tenent_name}}</option>
+                                    <option value="{{iteam.id }}">
+                                        {{ iteam.tenent_name}} , 
+                                        {{ iteam.tenent_home_id.home_location}}
+                                        {{ iteam.tenent_home_id.home_floor}}
+                                    </option>
                                 {%endfor%}
                             {% else %}
-                                    <option value="{{rent_detail.id}}">{{ rent_detail.rent_tenent_id.tenent_name}}</option>
+                                    <option value="{{rent_detail.id}}">
+                                        {{ rent_detail.rent_tenent_id.tenent_name}}
+                                        {{ rent_detail.rent_tenent_id.tenent_home_id.home_location}}
+                                        {{ rent_detail.rent_tenent_id.tenent_home_id.home_floor}}
+                                    </option>
                              {% endif %}
                          </select>
                      </td>
                  </tr>
-                <tr>
-                     <td>Rent Home</td>
-                     <td>:
-                         {% if rent_detail == "NEW" %}
-                                <select name ="rent_tenent_home">
-                                {%for iteam in tenent_object %}
-                                    <option value="{{iteam.tenent_home_id.id}}">{{ iteam.tenent_home_id.home_name}}</option>
-                                {%endfor%}
-                                </select>
-                         {% else %}
-                                    <Input type="text" name ="rent_tenent_home" value="{{rent_detail.rent_tenent_id.tenent_home_id.home_name}}">
-                         {% endif %}
-
-
-                     </td>
-                 </tr>
-
                  <tr>
                      <td>Rent Month/Year</td>
                      <td>: <Input type="date" name ="rent_month_year" value="{{rent_detail.rent_month_year|date:'Y-m-d'}}">
