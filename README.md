@@ -7,7 +7,7 @@ python3 manage.py migrate
 ```
 
 
-```asciidoc
+```
 python3 manage.py sqlmigrate HomEApp 0001
 
 ```
@@ -17,4 +17,9 @@ python3 manage.py sqlmigrate HomEApp 0001
 # for static files
 ```
 python manage.py collectstatic
+```
+
+# Install the package
+```
+pip-review --local --auto
 ```
