@@ -30,5 +30,8 @@ urlpatterns = [
     path('Delete_rent_detail/<int:ID>/',views.delete_rent_detail, name="delete_rent_detail"),
     path('update_rent_detail', views.update_rent_detail, name='update_rent_detail'),
     path('add_rent_detail',views.add_rent_detail, name="add_rent_detail"),
+    path('rent_prev/<int:page_count>',views.rent_prev_page, name="rent_prev_page"),
+    path('rent_next/<int:page_count>',views.rent_next_page, name="rent_next_page"),
+    path('search_rent_filter',views.search_rent_filiter, name="search_rent_filiter"),
 
 ]

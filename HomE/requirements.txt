@@ -5,3 +5,5 @@ tzdata==2022.1
 mysqlclient==2.1.1
 pip-check==2.8.1
 pip-review
+django-rest-framework
+djangorestframework

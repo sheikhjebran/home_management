@@ -2,6 +2,12 @@ from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages, auth
 from django.contrib.auth import authenticate
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework import permissions
+from rest_framework.decorators import api_view, renderer_classes
+from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 
 from .models import Home, Tenent, Rent
 import datetime
@@ -44,10 +50,13 @@ def search(request):
 
 
 @csrf_protect
-def rent_detail(request):
+def rent_detail(request,page=10, current_page=1):
     if request.user.is_authenticated:
-        rent_details = Rent.objects.all().order_by('-id')
-        return render(request, 'rent.html', {'rent_details': rent_details})
+        rent_details = Rent.objects.all().order_by('-id')[:page * current_page]
+        return render(request, 'rent.html', 
+                      {'rent_details': rent_details,
+                       'page_count': current_page}
+                      )
     else:
         return render(request, 'login.html')
 
@@ -77,7 +86,6 @@ def logout(request):
 
 def home_detail_modify(request,ID):
     home_detail_obj = Home.objects.get(pk=ID)
-
     print("home=",home_detail_obj.home_name)
     print("home=", home_detail_obj.home_location)
     return render(request,'home_detail_modify.html',{'home_detail': home_detail_obj})
@@ -112,15 +120,12 @@ def delete_rent_detail(request, ID):
     rent_detail_obj.delete()
     return rent_detail(request)
 
-
 def add_home_detail(request):
     return render(request,'home_detail_modify.html', {'home_detail': 'NEW'})
-
 
 def add_tenent_detail(request):
     home_detail_obj = Home.objects.all()
     return render(request, 'tenent_detail_modify.html', {'tenent_detail': 'NEW', 'home_object': home_detail_obj})
-
 
 def add_rent_detail(request):
     tenent_detail_obj = Tenent.objects.all().select_related('tenent_home_id')    
@@ -132,10 +137,63 @@ def add_rent_detail(request):
         tenent.tenent_name,
         tenent.tenent_home_id.home_location,
         tenent.tenent_home_id.home_floor]
-
         tenent_list.append(tenent_single_entry_list)
 
     return render(request, 'rent_detail_modify.html', {'rent_detail': 'NEW', 'tenent_object': tenent_detail_obj})
+
+def rent_next_page(request, page_count):
+    return rent_detail(request, current_page=page_count + 1)
+
+
+def rent_prev_page(request, page_count):
+    if page_count > 1:
+        return rent_detail(request, current_page=page_count - 1)
+    else:
+        return rent_detail(request)
+
+@api_view(('GET',))
+@renderer_classes((TemplateHTMLRenderer, JSONRenderer))
+def search_rent_filiter(request):
+    [...]
+    search_keyword = request.GET['search_keyword']
+    home_list1 = Home.objects.filter(home_name__contains=search_keyword).values()
+    home_list2 = Home.objects.filter(home_location__contains=search_keyword).values()
+    home_list3 = Home.objects.filter(home_address__contains=search_keyword).values()
+    home_list4 = Home.objects.filter(home_floor__contains=search_keyword).values()
+
+    #Entry.objects.get(title__regex=r"^(An?|The) +")    
+    home_list = []
+    for home in home_list1:
+        if home not in home_list:
+            home_list.append(home)
+    for home in home_list2:
+        if home not in home_list:
+            home_list.append(home)
+    for home in home_list3:
+        if home not in home_list:
+            home_list.append(home)
+    for home in home_list4:
+        if home not in home_list:
+            home_list.append(home)
+
+    rent_list = []
+    for home in home_list:
+            result = Rent.objects.filter(rent_tenent_id=int(home["id"])).order_by('-id')[:10]
+            rent_list.append(result)
+
+    rent = []
+    for resultList in rent_list:
+        for result in resultList:
+            list = [result.id,
+            result.rent_month_year,
+            result.rent_recived_date,
+            result.rent_tenent_id.tenent_home_id.home_name,
+            result.rent_tenent_id.tenent_name,
+            result.rent_amount]
+            rent.append(list)
+        
+    data = {'rent_list': rent}
+    return Response(data, status=status.HTTP_200_OK)
 
 
 def update_home_detail(request):

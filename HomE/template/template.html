@@ -18,131 +18,9 @@ Author URL: http://w3layouts.com
     rel="stylesheet">
   <!-- Template CSS -->
   <link rel="stylesheet" href="{% static 'css/style-starter.css'%}">
-
+  <link rel="stylesheet" href="{% static 'css/custom.css'%}">
 </head>
 <body>
-
-<style type="text/css">
-    .main-container{
-      width: 100%;
-    }
-    .menu{
-      float: left; width: 10%;
-    }
-    .side-menu{
-      font-size: 24px; font-weight: bolder;
-    }
-    .side-menu > li{
-      margin-top: 35px;
-      padding-top:10%;
-      padding-left: 10%;
-      padding-bottom: 5px;
-      color: beige;
-      height: 80px;
-      cursor:grab;
-    }
-
-    .rent{
-      background-color: #ffbf52;
-    }
-    .rent:hover{
-      background-color: #f7c56f;
-    }
-    .tenent{
-      background-color: #466afa;
-    }
-    .tenent:hover{
-      background-color: #5778fa;
-    }
-    .home{
-      background-color: #ab30fc;
-    }
-    .home:hover{
-      background-color: #b043f7;
-    }
-    .w3l-banner-content{
-      align-items: normal;
-      padding-top: 5%;
-    }
-
-    ul > .rent > a{
-      color: white;
-    }
-
-    ul > .tenent > a{
-      color: white;
-    }
-    ul > .home > a{
-      color: white;
-    }
-    .warning{
-      color: red;
-    }
-
-    .color-theme{
-        width: 50%;
-    }
-    .Search_bar{
-        float: right;
-        width: 45%;
-    }
-
-    #logout{
-    border: 0px solid;
-    font-weight:bolder;
-    background-color: #fcb53a;
-    color: white;
-    height:45px;
-    width:100px;
-    float:right;
-    margin-right:5%
-    }
-
-    #search{
-       height:45px;
-        border:0px solid;
-        margin-right:5px
-        padding-right:10px;
-        padding-left:10px;
-        width:70%;
-    }
-    @media screen and (max-width: 300px) {
-    #logout {
-        display: none;
-        }
-    }
-
-    input[type='submit'], input[value='Delete'], .button,.delete_button{
-    border: 0px solid;
-    font-weight:bolder;
-    background-color: #fcb53a;
-    color: white;
-    height:45px;
-    width:100px;
-    float:right;
-    margin-right:5%
-    }
-
-    input[type='text'],select,input[type='date']{
-    border: solid;
-    font-weight:bolder;
-    height:45px;
-    width:75%;
-    padding-left:2%;
-    background-color: #f0f0f0
-    }
-
-    textarea{
-    border: solid;
-    font-weight:bolder;
-    height:100px;
-    width:400px;
-    padding-left:2%;
-    background-color: #f0f0f0
-    }
-
-
-  </style>
 
 </script>
 <div style="width: 100%;">
@@ -205,6 +83,7 @@ Author URL: http://w3layouts.com
     <!-- Template JavaScript -->
     <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
     <script src="{% static 'js/theme-change.js'%}"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
     <!-- disable body scroll which navbar is in active -->
     <script>
       $(function () {

@@ -7,10 +7,13 @@
         
         <div class="container">
         <h1>Rent Detail</h1>
-        <div>
+        <div class="search_filter">
             <input type="button" class="button" value="Add Rent" onclick="location.href = '/add_rent_detail';">
+            <div>
+                <input type="text" placeholder ="Enter the keyword to search" id="rent_filter_search">
+            </div>
         </div>
-         <table class="table">
+         <table class="table" id="tableWrapper">
             <tr class="table-headder">
                 <td>Rent ID</td>
                 <td>Rent Month/Year</td>
@@ -19,18 +22,30 @@
                 <td>Rent Tenent</td>
                 <td>Rent Amount</td>
             </tr>
-            {% for rent in rent_details %}
-            <tr class="table-data">
-                <td><a href="rent_detail_modify/{{rent.id}}">{{ rent.id}}</a></td>
-                <td>{{rent.rent_month_year|date:'M-Y'}}</td>
-                <td>{{rent.rent_recived_date}}</td>
-                <td>{{rent.rent_tenent_id.tenent_home_id.home_name}}</td>
-                <td>{{rent.rent_tenent_id.tenent_name}}</td>
-                <td>{{rent.rent_amount}}</td>
-            </tr>
-            {% endfor %}
+            <tbody>
+                {% for rent in rent_details %}
+                <tr class="table-data">
+                    <td><a href="rent_detail_modify/{{rent.id}}">{{ rent.id}}</a></td>
+                    <td>{{rent.rent_month_year|date:'M-Y'}}</td>
+                    <td>{{rent.rent_recived_date}}</td>
+                    <td>{{rent.rent_tenent_id.tenent_home_id.home_name}}</td>
+                    <td>{{rent.rent_tenent_id.tenent_name}}</td>
+                    <td>{{rent.rent_amount}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
          </table>
         </div>
+        <div class="page-control">
+            <ul>
+                <li>
+                    <a href="/rent_prev/{{page_count}}">PREV</a>
+                </li>
+                <li>
+                    <a href="/rent_next/{{page_count}}">NEXT</a>
+                </li>
+            </ul>
+        </div>    
       </div>
 </div>
   
