@@ -1,9 +1,9 @@
-asgiref==3.5.0
-Django==4.0.4
-sqlparse==0.4.2
-tzdata==2022.1
-mysqlclient==2.1.1
-pip-check==2.8.1
+asgiref
+Django
+sqlparse
+tzdata
+mysqlclient
+pip-check
 pip-review
 django-rest-framework
 djangorestframework
