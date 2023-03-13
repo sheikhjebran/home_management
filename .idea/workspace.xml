@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6d3d91a2-e5ec-46fc-a5cb-9397752d121f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomE/HomE/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/HomE/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomE/HomEApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/HomEApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomE/HomEApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/HomEApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomE/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomE/template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,15 +38,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="exceleditor.install" value="true" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/HomE/static/js" />
