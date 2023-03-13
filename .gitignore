@@ -4,3 +4,6 @@ venv/*
 venv/
 HomE/HomEApp/__pycache__/
 HomE/HomEApp/__pycache__/*
+HomE/HomE/__pycache__/*
+HomE/HomE/__pycache__/
+*/__pycache__/

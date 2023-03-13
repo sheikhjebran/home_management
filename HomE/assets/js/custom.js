@@ -39,14 +39,22 @@ $(document).ready(function(){
                 </tr>`
             );
             for (var [key, value] of Object.entries(rent_list)) {
-            
+                    var dateArray = value[1].split("-");
+
+                    var myYear = dateArray[0]
+                    var myMonth = dateArray[1]
+                    var myDate = dateArray[2]
+
+                    var now = new Date(myMonth+"/"+myDate+"/"+myYear);
+                    var month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
                     $('#tableWrapper')
                         .children('tbody')
                         .last().append(
                             `
                             <tr class="table-data">
                                 <td><a href="rent_detail_modify/`+value[0]+`">`+value[0]+`</a></td>
-                                <td>`+value[1]+`</td>
+                                <td>`+month[parseInt(now.getMonth())]+`-`+now.getFullYear()+`</td>
                                 <td>`+value[2]+`</td>
                                 <td>`+value[3]+`</td>
                                 <td>`+value[4]+`</td>
